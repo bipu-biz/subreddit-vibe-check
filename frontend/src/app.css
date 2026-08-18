@@ -1,0 +1,483 @@
+:root {
+  font-family:
+    Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  color: #e8e8ed;
+  background: #0d0d0f;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #0d0d0f;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* =========================
+   APP
+========================= */
+
+.app {
+  min-height: 100vh;
+  padding: 60px 24px;
+}
+
+.container {
+  width: min(1100px, 100%);
+  margin: 0 auto;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 18px;
+
+  border: 1px solid #2d2d34;
+  border-radius: 999px;
+
+  color: #a8a8b3;
+  background: #151518;
+
+  font-size: 13px;
+  letter-spacing: 0.5px;
+}
+
+.hero h1 {
+  margin: 0;
+
+  font-size: clamp(36px, 6vw, 64px);
+  line-height: 1;
+
+  letter-spacing: -2px;
+}
+
+.hero p {
+  max-width: 600px;
+  margin: 18px auto 0;
+
+  color: #92929d;
+
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-box {
+  display: flex;
+
+  max-width: 650px;
+  margin: 32px auto 0;
+  padding: 6px;
+
+  background: #17171b;
+
+  border: 1px solid #29292f;
+  border-radius: 14px;
+}
+
+.search-box input {
+  flex: 1;
+  min-width: 0;
+
+  padding: 14px 16px;
+
+  border: none;
+  outline: none;
+
+  color: #fff;
+  background: transparent;
+}
+
+.search-box input::placeholder {
+  color: #65656e;
+}
+
+.search-box button {
+  padding: 12px 20px;
+
+  border: none;
+  border-radius: 9px;
+
+  color: #111;
+  background: #fff;
+
+  font-weight: 600;
+
+  transition:
+    opacity 0.2s,
+    transform 0.2s;
+}
+
+.search-box button:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.search-box button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* =========================
+   ERROR
+========================= */
+
+.error {
+  max-width: 650px;
+  margin: 20px auto;
+
+  padding: 12px 16px;
+
+  border: 1px solid #49262a;
+  border-radius: 10px;
+
+  color: #e8787e;
+  background: #241417;
+
+  text-align: center;
+}
+
+/* =========================
+   SUMMARY
+========================= */
+
+.summary {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 14px;
+
+  margin-bottom: 20px;
+}
+
+.summary-card {
+  padding: 22px;
+
+  border: 1px solid #29292f;
+  border-radius: 14px;
+
+  background: #151518;
+
+  transition:
+    border-color 0.2s,
+    transform 0.2s;
+}
+
+.summary-card:hover {
+  border-color: #45454e;
+  transform: translateY(-2px);
+}
+
+.summary-card span {
+  color: #777782;
+
+  font-size: 13px;
+}
+
+.summary-card strong {
+  display: block;
+
+  margin-top: 8px;
+
+  font-size: 28px;
+}
+
+.summary-card small {
+  color: #777782;
+
+  font-size: 13px;
+  font-weight: 400;
+}
+
+/* =========================
+   SENTIMENT CHART
+========================= */
+
+.sentiment-chart {
+  margin-bottom: 42px;
+  padding: 24px;
+
+  border: 1px solid #29292f;
+  border-radius: 14px;
+
+  background: #151518;
+}
+
+.chart-header h2 {
+  margin: 0;
+
+  font-size: 20px;
+}
+
+.chart-header p {
+  margin: 6px 0 0;
+
+  color: #777782;
+
+  font-size: 13px;
+}
+
+.sentiment-bar {
+  display: flex;
+
+  height: 12px;
+
+  margin-top: 24px;
+
+  overflow: hidden;
+
+  border-radius: 999px;
+
+  background: #242429;
+}
+
+.bar-positive {
+  background: #65d391;
+}
+
+.bar-neutral {
+  background: #d6c76b;
+}
+
+.bar-negative {
+  background: #e8787e;
+}
+
+.chart-legend {
+  display: flex;
+
+  gap: 24px;
+
+  margin-top: 16px;
+
+  color: #a0a0aa;
+
+  font-size: 13px;
+}
+
+.chart-legend span {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+}
+
+.positive-dot {
+  background: #65d391;
+}
+
+.neutral-dot {
+  background: #d6c76b;
+}
+
+.negative-dot {
+  background: #e8787e;
+}
+
+/* =========================
+   POSTS HEADER
+========================= */
+
+.posts-header {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 18px;
+}
+
+.posts-header h2 {
+  margin: 0;
+
+  font-size: 22px;
+}
+
+.post-meta {
+  color: #777782;
+
+  font-size: 13px;
+}
+
+/* =========================
+   POSTS
+========================= */
+
+.post-list {
+  display: grid;
+
+  gap: 12px;
+}
+
+.post-card {
+  padding: 22px;
+
+  border: 1px solid #29292f;
+  border-radius: 14px;
+
+  background: #151518;
+
+  transition:
+    border-color 0.2s,
+    transform 0.2s;
+}
+
+.post-card:hover {
+  border-color: #45454e;
+
+  transform: translateY(-2px);
+}
+
+.post-card h3 {
+  margin: 0 0 12px;
+
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.post-bottom {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 18px;
+}
+
+/* =========================
+   SENTIMENT BADGES
+========================= */
+
+.sentiment {
+  padding: 5px 10px;
+
+  border-radius: 999px;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  text-transform: capitalize;
+}
+
+.sentiment-positive {
+  color: #65d391;
+  background: #173522;
+}
+
+.sentiment-neutral {
+  color: #d6c76b;
+  background: #302d1a;
+}
+
+.sentiment-negative {
+  color: #e8787e;
+  background: #381d20;
+}
+
+/* =========================
+   VIEW POST
+========================= */
+
+.view-post {
+  color: #a5a5af;
+
+  font-size: 13px;
+
+  text-decoration: none;
+
+  transition: color 0.2s;
+}
+
+.view-post:hover {
+  color: #fff;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+  .app {
+    padding: 36px 16px;
+  }
+
+  .summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .search-box {
+    flex-direction: column;
+
+    gap: 6px;
+  }
+
+  .search-box button {
+    width: 100%;
+  }
+
+  .posts-header {
+    align-items: flex-start;
+
+    gap: 10px;
+  }
+
+  .chart-legend {
+    flex-direction: column;
+
+    gap: 10px;
+  }
+}
+
+@media (max-width: 420px) {
+  .summary {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    letter-spacing: -1px;
+  }
+
+  .post-bottom {
+    align-items: flex-start;
+
+    gap: 12px;
+
+    flex-direction: column;
+  }
+}

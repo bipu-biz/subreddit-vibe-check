@@ -8,14 +8,25 @@ export const getHotPosts = async (subreddit: string) => {
         limit: 50,
       },
       headers: {
-        "User-Agent":
-          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36",
-        "Accept": "application/json",
+        "User-Agent": "VibeCheck/1.0",
+        Accept: "application/json",
       },
     }
   );
 
-  console.log("Reddit response:", response.data);
+  return response.data.data.children.map((child: any) => {
+    const post = child.data;
 
-  return response.data;
+    return {
+      id: post.id,
+      title: post.title,
+      author: post.author,
+      score: post.score,
+      numComments: post.num_comments,
+      url: post.url,
+      permalink: post.permalink,
+      createdUtc: post.created_utc,
+      subreddit: post.subreddit,
+    };
+  });
 };
