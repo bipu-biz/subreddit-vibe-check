@@ -67,4 +67,3 @@ subreddit-vibe-check/
         ├── App.css
         └── main.tsx
 
-Bipul
