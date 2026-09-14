@@ -67,4 +67,4 @@ subreddit-vibe-check/
         ├── App.css
         └── main.tsx
 
-Bipul
+Bipul bharti
